@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cashflow</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <style>
+        :root {
+            --ion-safe-area-top: 20px;
+            --ion-safe-area-bottom: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header translucent>
+            <ion-toolbar>
+                <ion-title>Your Cashflow</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content fullscreen class="ion-padding">
+            <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+              <ion-fab-button>
+                <ion-icon name="chevron-down-circle-outline"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-list>
+                <ion-fab-button color="light">
+                  <ion-icon name="home"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-button color="light">
+                  <ion-icon name="person-circle-outline"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-button color="primary">
+                  <ion-icon name="card-outline"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-button color="light">
+                  <ion-icon name="logo-usd"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-button color="light">
+                  <ion-icon name="logo-wechat"></ion-icon>
+                </ion-fab-button>
+              </ion-fab-list>
+            </ion-fab>
+
+
+        <ion-content fullscreen>
+            <ion-list inset="true">
+                <ion-breadcrumbs>
+                    <ion-breadcrumb href="#">
+                        <ion-icon slot="start" name="home"></ion-icon>
+                        Home
+                    </ion-breadcrumb>
+
+                    <ion-breadcrumbs>
+                        <ion-breadcrumb href="profile">
+                            <ion-icon slot="start" name="card-outline">
+                            </ion-icon>
+                            Your Cashflow
+                        </ion-breadcrumb>
+
+            </ion-list>
+ 
+
+            <ion-list>
+            <ion-card>
+                <ion-item>
+                  <ion-label>Current Balance</ion-label>
+                </ion-item>
+                <ion-card-content>
+                    <ion-item color="primary">
+                        <ion-label>Stable</ion-label>
+                      </ion-item>
+                </ion-card-content>
+              </ion-card>
+
+              <ion-card>
+                <ion-item>
+                  <ion-label>Bills</ion-label>
+                  <ion-title>Next 30 days</ion-title>
+                </ion-item>
+                <ion-card-content>
+                    <ion-item color="danger">
+                        <ion-label>Overall - Insufficient Balance</ion-label>
+                        
+                      </ion-item>
+                      <ion-note color="danger">Balance requires top-up</ion-note>
+                </ion-card-content>
+                <ion-card-content>
+                    <ion-item color="danger">
+                        <ion-label>Rent</ion-label>
+                      </ion-item>
+                </ion-card-content>
+                <ion-card-content>
+                    <ion-item color="warning">
+                        <ion-label>Car</ion-label>
+                      </ion-item>
+                </ion-card-content>
+                <ion-card-content>
+                    <ion-item color="success">
+                        <ion-label>Gas & Electric</ion-label>
+                      </ion-item>
+                </ion-card-content>
+                <ion-card-content>
+                    <ion-item color="success">
+                        <ion-label>Phone</ion-label>
+                      </ion-item>
+                </ion-card-content>
+
+              </ion-card>
+
+              <ion-card>
+                <ion-item>
+                  <ion-label>Spent</ion-label>
+                  <ion-title>Past 30 days</ion-title>
+                </ion-item>
+                <ion-card-content>
+                    <img src="images/exVsin.png" />
+                        <ion-label>Expenses Vs Income</ion-label>
+                </ion-card-content>
+              </ion-card>
+            </ion-list>
+
+
+
+
+
+
+        </ion-content>
+    </ion-app>
+</body>
+
+</html>
