@@ -9,6 +9,7 @@
   <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script src="exchange.js"></script>
   <style>
     :root {
       --ion-safe-area-top: 20px;
@@ -55,22 +56,22 @@
           <ion-icon name="chevron-down-circle-outline"></ion-icon>
         </ion-fab-button>
         <ion-fab-list>
-          <ion-fab-button color="light">
+          <ion-fab-button color="light" href ="Home.html">
             <ion-icon name="home"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light">
+          <ion-fab-button color="light" href ="profileEdit.html">
             <ion-icon name="person-circle-outline"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light">
+          <ion-fab-button color="light" href ="Cashflow.html">
             <ion-icon name="card-outline"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="primary">
+          <ion-fab-button color="primary" href ="converter.html">
             <ion-icon name="logo-usd"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light">
+          <ion-fab-button color="light" href ="chat.html">
             <ion-icon name="logo-wechat"></ion-icon>
           </ion-fab-button>
-        </ion-fab-list>
+      </ion-fab-list>
       </ion-fab>
 
       <ion-content fullscreen class="ion-padding">
@@ -88,6 +89,7 @@
                 </ion-icon>
                 Currency Converter
               </ion-breadcrumb>
+        </ion-list>
 
 
               <!-- Currency converter -->
@@ -177,7 +179,8 @@
                     </select>
                     <!-- Above lists all the values for the exchange currency. Identified through the API as they hold the same values.-->
                     <br><br>
-                    <input class="convert" type="button" value="Convert" onclick="currencyConvert()">
+                    <input class="convert"  type="button" value="Convert" onclick="currencyConvert()">
+<!--                     <ion-button expand="block" class="convert"  type="button" value="Convert" onclick="currencyConvert()">Convert</ion-button> -->
                     <input class="result" type="text" placeholder="Conversion Result" id="Output" select disabled>
 
                   </form>
