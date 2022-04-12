@@ -54,87 +54,106 @@
         <ion-content fullscreen>
             <ion-list inset="true">
                 <ion-breadcrumbs>
-                    <ion-breadcrumb href="Home.html">
+                    <ion-breadcrumb href="#">
                         <ion-icon slot="start" name="home"></ion-icon>
                         Home
                     </ion-breadcrumb>
 
                     <ion-breadcrumbs>
-                        <ion-breadcrumb href="Cashflow.html">
+                        <ion-breadcrumb href="profile">
                             <ion-icon slot="start" name="card-outline">
                             </ion-icon>
                             Your Cashflow
                         </ion-breadcrumb>
 
-            </ion-list>
+                        <ion-breadcrumbs>
+                            <ion-breadcrumb href="profile">
+                                <ion-icon slot="start" name="card-outline">
+                                </ion-icon>
+                                Edit Cashflow
+                            </ion-breadcrumb>
 
-            <ion-fab vertical="center" horizontal="end" slot="fixed">
-              <ion-fab-button color="dark" href ="cashflowEdit.html">
-                <ion-icon name="add"></ion-icon>
-              </ion-fab-button>
-            </ion-fab>
+            </ion-list>
  
 
             <ion-list>
-              
             <ion-card>
-
-                <ion-item>       
+            <ion-item>       
                   <ion-label>Current Balance</ion-label>
                 </ion-item>
                 <ion-card-content>
-                    <ion-item color="primary">
-                        <ion-label>Stable</ion-label>
+                    <ion-item color="dark">
+                        <ion-input placeholder ="Amount" type="number"></ion-input>
+                        <ion-button id="balButton" size="small" color="light">Update</ion-button>
                       </ion-item>
                 </ion-card-content>
               </ion-card>
-
+            
               <ion-card>
-                <ion-item>
-                  <ion-label>Bills</ion-label>
-                  <ion-title>Next 30 days</ion-title>
+              <ion-item> 
+                 <ion-label>Rent</ion-label>
                 </ion-item>
-                <ion-card-content>
-                    <ion-item id="overallBal" color="danger">
-                        <ion-label  id="overallBalText">Overall - Insufficient Balance</ion-label>
-                      </ion-item>
+            <ion-card-content>
+                <ion-item color="dark">
+                    <ion-input placeholder ="Amount"  type="number"></ion-input>
+                    <ion-button id="rentButton" size="small" color="light">Update</ion-button>
+                  </ion-item>
+            </ion-card-content>
+          </ion-card>
 
-                      <ion-note color="danger">Balance requires top-up</ion-note>
-                </ion-card-content>
-                <ion-card-content>
-                    <ion-item color="danger">
-                        <ion-label>Rent</ion-label>
-                      </ion-item>
-                </ion-card-content>
-                <ion-card-content>
-                    <ion-item color="warning">
-                        <ion-label>Car</ion-label>
-                      </ion-item>
-                </ion-card-content>
-                <ion-card-content>
-                    <ion-item color="success">
-                        <ion-label>Gas & Electric</ion-label>
-                      </ion-item>
-                </ion-card-content>
-                <ion-card-content>
-                    <ion-item color="success">
-                        <ion-label>Phone</ion-label>
-                      </ion-item>
-                </ion-card-content>
-
-              </ion-card>
-
-              <ion-card>
-                <ion-item>
-                  <ion-label>Spent</ion-label>
-                  <ion-title>Past 30 days</ion-title>
+          <ion-card>
+            <ion-item> 
+               <ion-label>Car Costs</ion-label>
+              </ion-item>
+          <ion-card-content>
+              <ion-item color="dark">
+                  <ion-input placeholder ="Amount" type="number"></ion-input>
+                  <ion-button id="carButton" size="small" color="light">Update</ion-button>
                 </ion-item>
-                <ion-card-content>
-                    <img src="images/exVsin.png" />
-                        <ion-label>Expenses Vs Income</ion-label>
-                </ion-card-content>
-              </ion-card>
-            </ion-list>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-item> 
+               <ion-label>Gas & Electric Bill</ion-label>
+              </ion-item>
+          <ion-card-content>
+              <ion-item color="dark">
+                  <ion-input placeholder ="Amount" type="number"></ion-input>
+                  <ion-button id="gasButton" size="small" color="light">Update</ion-button>
+                </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-item> 
+               <ion-label>Phone Bill</ion-label>
+              </ion-item>
+          <ion-card-content>
+              <ion-item color="dark">
+                  <ion-input placeholder ="Amount"   type="number"></ion-input>
+                  <ion-button id="phoneButton" size="small" color="light">Update</ion-button>
+                </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-item> 
+               <ion-label>Other</ion-label>
+              </ion-item>
+          <ion-card-content>
+              <ion-item color="dark">
+                  <ion-input placeholder ="Amount" type="number"></ion-input>
+                  <ion-button id="phoneButton" size="small" color="light">Update</ion-button>
+                </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-list>
+
+
+
+
 
         </ion-content>
     </ion-app>
