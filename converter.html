@@ -104,39 +104,8 @@
                     <input class="reset" type="reset" value="Reset Exchange"><br><br>
                     <div class="custom-select">
                       <select class="select" id="base" required>
-                        <option value="select" selected disabled>Select Base Currency</option>
-                        <option input>EUR</option>
-                        <option input>USD</option>
-                        <option input>HKD</option>
-                        <option input>CAD</option>
-                        <option input>ISK</option>
-                        <option input>PHP</option>
-                        <option input>DKK</option>
-                        <option input>HUF</option>
-                        <option input>CZK</option>
-                        <option input>AUD</option>
-                        <option input>RON</option>
-                        <option input>SEK</option>
-                        <option input>IDR</option>
-                        <option input>BRL</option>
-                        <option input>RUB</option>
-                        <option input>HRK</option>
-                        <option input>JPY</option>
-                        <option input>THB</option>
-                        <option input>CHF</option>
-                        <option input>SGD</option>
-                        <option input>PLN</option>
-                        <option input>BGN</option>
-                        <option input>TRY</option>
-                        <option input>CNY</option>
-                        <option input>NOK</option>
-                        <option input>NZD</option>
-                        <option input>ZAR</option>
-                        <option input>MXN</option>
-                        <option input>ILS</option>
-                        <option input>KRW</option>
-                        <option input>MYR</option>
-                        <option input>GBP</option>
+                        <option value="select" selected disabled>EUR</option>
+                        <p input>EUR</p>
                       </select>
                     </div><br>
                     <!-- Above lists all the values for the select base currency-->
@@ -182,7 +151,30 @@
                     <input class="convert"  type="button" value="Convert" onclick="currencyConvert()">
 <!--                     <ion-button expand="block" class="convert"  type="button" value="Convert" onclick="currencyConvert()">Convert</ion-button> -->
                     <input class="result" type="text" placeholder="Conversion Result" id="Output" select disabled>
+                    
+                    <script>
 
+                      async function currencyConvert() {
+                          var valNum = document.getElementById("amount").value;
+                          if (valNum <= 0) {
+                              window.alert("Please Enter a value greater than 0");
+                          }
+              
+                          else {
+                              var base = document.getElementById("base").value;
+                              var currencyValue = document.getElementById("Currency").value;
+                              if (currencyValue == "select") {
+                                  window.alert("Please pick a conversion currency!");
+                              }
+              
+                              else {
+                                  var rates = await getDataByBase(base);
+                                  document.getElementById("Output").value = (valNum * rates[currencyValue]).toFixed(2);
+                              }
+              
+                          }
+                      }
+                  </script>
                   </form>
                 </ion-card-content>
               </ion-card>

@@ -1,11 +1,13 @@
 
-endpoint = '?base='
+endpoint = 'latest'
+access_key ='d1424d47a559bfd42757b7c772fb79be'
 
 
-const api_url = 'http://api.exchangeratesapi.io/v1/latest?access_key=c2eb1c8aef1eb52ee9715976f256w436b'+ endpoint
+const api_url = 'http://api.exchangeratesapi.io/v1/'+ endpoint + '?access_key=' + access_key 
+
 
 async function getDataByBase(baseCurrency) { 
-    var api_baseUrl = api_url + baseCurrency;
+    var api_baseUrl = api_url;
     const response = await fetch(api_baseUrl);
     const data = await response.json();
     const { base, rates } = data;
@@ -17,10 +19,3 @@ async function getDataByBase(baseCurrency) {
     console.log(data.date);
     return rates;
 }
-
-// http://api.exchangeratesapi.io/v1/latest
-
- //   ? access_key = YOUR_ACCESS_KEY
- //   & base = GBP
- //   & symbols = USD,AUD,CAD,PLN,MXN
- //
