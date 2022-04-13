@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <script src="cashflow.js" defer></script>
+    <script src="cashflowEdit.js" defer></script>
+    
     <style>
         :root {
             --ion-safe-area-top: 20px;
@@ -82,8 +83,8 @@
                   <ion-label>Current Balance</ion-label>
                 </ion-item>
                 <ion-card-content>
-                    <ion-item color="dark">
-                        <ion-input placeholder ="Amount" type="number"></ion-input>
+                    <ion-item color="dark" id="balColor">
+                        <ion-input id="balAmount" placeholder ="Amount" type="number"></ion-input>
                         <ion-button id="balButton" size="small" color="light">Update</ion-button>
                       </ion-item>
                 </ion-card-content>
@@ -94,8 +95,8 @@
                  <ion-label>Rent</ion-label>
                 </ion-item>
             <ion-card-content>
-                <ion-item color="dark">
-                    <ion-input placeholder ="Amount"  type="number"></ion-input>
+                <ion-item color="dark" id="rentColor">
+                    <ion-input id="rentAmount" placeholder ="Amount"  type="number"></ion-input>
                     <ion-button id="rentButton" size="small" color="light">Update</ion-button>
                   </ion-item>
             </ion-card-content>
@@ -106,8 +107,8 @@
                <ion-label>Car Costs</ion-label>
               </ion-item>
           <ion-card-content>
-              <ion-item color="dark">
-                  <ion-input placeholder ="Amount" type="number"></ion-input>
+              <ion-item color="dark" id="carColor">
+                  <ion-input id="carAmount" placeholder ="Amount" type="number"></ion-input>
                   <ion-button id="carButton" size="small" color="light">Update</ion-button>
                 </ion-item>
           </ion-card-content>
@@ -118,8 +119,8 @@
                <ion-label>Gas & Electric Bill</ion-label>
               </ion-item>
           <ion-card-content>
-              <ion-item color="dark">
-                  <ion-input placeholder ="Amount" type="number"></ion-input>
+              <ion-item color="dark" id="gasColor">
+                  <ion-input id="gasAmount" placeholder ="Amount" type="number"></ion-input>
                   <ion-button id="gasButton" size="small" color="light">Update</ion-button>
                 </ion-item>
           </ion-card-content>
@@ -130,8 +131,8 @@
                <ion-label>Phone Bill</ion-label>
               </ion-item>
           <ion-card-content>
-              <ion-item color="dark">
-                  <ion-input placeholder ="Amount"   type="number"></ion-input>
+              <ion-item color="dark" id="phoneColor">
+                  <ion-input id="phoneAmount" placeholder ="Amount"   type="number"></ion-input>
                   <ion-button id="phoneButton" size="small" color="light">Update</ion-button>
                 </ion-item>
           </ion-card-content>
@@ -142,9 +143,9 @@
                <ion-label>Other</ion-label>
               </ion-item>
           <ion-card-content>
-              <ion-item color="dark">
-                  <ion-input placeholder ="Amount" type="number"></ion-input>
-                  <ion-button id="phoneButton" size="small" color="light">Update</ion-button>
+              <ion-item color="dark" id="otherColor">
+                  <ion-input id="otherAmount" placeholder ="Amount" type="number"></ion-input>
+                  <ion-button id="otherButton" size="small" color="light">Update</ion-button>
                 </ion-item>
           </ion-card-content>
         </ion-card>

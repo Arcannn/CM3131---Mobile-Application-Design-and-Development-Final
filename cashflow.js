@@ -1,11 +1,81 @@
-var updateButton = document.getElementById("updateButton");
+/* Description of file... */
+/* Variables */
 var overallBal = document.getElementById("overallBal");
-var overallBalText = document.getElementById("overallBalText");
+var overallText = document.getElementById("overallBalText");
+var topUpRequired = document.getElementById("topUp");
+
+var balContent = document.getElementById("balContent");
+var currentBal = document.getElementById("currentBal");
+var currentRent = document.getElementById("currentRent");
+var currentCar = document.getElementById("currentCar");
+var currentGas = document.getElementById("currentGas");
+var currentPhone = document.getElementById("currentPhone");
+var currentOther = document.getElementById("currentOther");
 
 
+/* get local storage values, if not set, set to 0 */
+var rentAmount = (isNaN(parseInt(localStorage.getItem('amountRent')))) ? 0 : localStorage.getItem('amountRent');
+var balAmount = (isNaN(parseInt(localStorage.getItem('amountBal')))) ? 0 : localStorage.getItem('amountBal');
+var carAmount = (isNaN(parseInt(localStorage.getItem('amountCar')))) ? 0 : localStorage.getItem('amountCar');
+var gasAmount = (isNaN(parseInt(localStorage.getItem('amountGas')))) ? 0 : localStorage.getItem('amountGas');
+var phoneAmount = (isNaN(parseInt(localStorage.getItem('amountPhone')))) ? 0 : localStorage.getItem('amountPhone');
+var otherAmount = (isNaN(parseInt(localStorage.getItem('amountOther')))) ? 0 : localStorage.getItem('amountOther');
 
-updateButton.addEventListener("click", function(){
-    overallBal.color = "success";
-    /* values: Rent 700
-     */
-})
+var rentColor = document.getElementById("rentColor");
+var gasColor = document.getElementById("gasColor");
+var carColor = document.getElementById("carColor");
+var phoneColor = document.getElementById("phoneColor");
+var otherColor = document.getElementById("otherColor");
+
+var spent30 = document.getElementById("spent");
+
+/* For overall bills */
+var sumOfBills = parseInt(rentAmount) + parseInt(carAmount) + parseInt(gasAmount) + parseInt(phoneAmount) + parseInt(otherAmount);
+
+spent30.innerHTML = sumOfBills;
+
+
+/* Bills arrays sum + colours */
+var bills = [rentAmount, carAmount, gasAmount, phoneAmount, otherAmount];
+var billColors = [rentColor, carColor, gasColor, phoneColor, otherColor];
+var billText = [currentRent, currentCar, currentGas, currentPhone, currentOther];
+
+
+/* On document load, local storage is used to get the value € */
+
+currentBal.innerHTML = "€" + ((balAmount == null || balAmount <= 0) ? 0 : balAmount);
+currentRent.innerHTML = "Rent: €" + ((rentAmount == null || rentAmount <= 0) ? 0 : rentAmount);
+currentCar.innerHTML = "Car: €" + ((carAmount == null || carAmount <= 0) ? 0 : carAmount);
+currentGas.innerHTML = "Gas & Electric: €" + ((gasAmount == null || gasAmount <= 0) ? 0 : gasAmount);
+currentPhone.innerHTML = "Phone: €" + ((phoneAmount == null || phoneAmount <= 0) ? 0 : phoneAmount);
+currentOther.innerHTML = "Other: €" + ((otherAmount == null || otherAmount <= 0) ? 0 : otherAmount);
+
+
+if (sumOfBills > parseInt(balAmount)) {
+    overallText.innerHTML += 'Insufficient Balance';
+    overallBal.style.setProperty('--background', '#eb445a');
+    overallBal.style.setProperty('color', '#ffffff');
+
+}
+else {
+    overallBal.style.setProperty('--background', '#2dd36f');
+    overallBal.style.setProperty('color', '#000000')
+    overallText.innerHTML += 'Sufficient Balance';
+    topUpRequired.style.visibility = "hidden";
+}
+
+
+/*  for loop. For each of the bills, the % ratio is checking if it above a certain percentage. less than 30% is green, above 30 to 49 is yellow, and above 50 is red.*/
+for (let i = 0; i < bills.length; i++) {
+    let percentageOfBal = parseInt(bills[i]) / parseInt(balAmount);
+    if (percentageOfBal >= 0.5) {
+        billColors[i].style.setProperty('--background', '#eb445a');
+        billText[i].style.setProperty('color', '#ffffff');
+    } else if (percentageOfBal >= 0.3) {
+        billColors[i].style.setProperty('--background', '#ffc409');
+        billText[i].style.setProperty('color', '#000000');
+    } else {
+        billColors[i].style.setProperty('--background', '#2dd36f');
+        billText[i].style.setProperty('color', '#000000');
+    }
+}

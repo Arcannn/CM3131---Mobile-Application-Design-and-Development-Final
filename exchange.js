@@ -12,10 +12,5 @@ async function getDataByBase(baseCurrency) {
     const data = await response.json();
     const { base, rates } = data;
     
-
-
-    console.log(base);
-    console.log(rates.CAD);
-    console.log(data.date);
     return rates;
 }

@@ -96,8 +96,10 @@
               <ion-card>
                 <ion-card-header>
 
-                  <ion-card-title>Currency Converter</ion-card-title>
-                  <ion-card-subtitle>please select the currency you wish to use. Base currency is Euro.</ion-card-subtitle>
+                  <ion-card-title>Currency Converter</ion-card-title> <br><br>
+                  <ion-card-subtitle>please select the currency you wish to use.</ion-card-subtitle> 
+                  <br>
+                  <ion-card-subtitle>Base currency is Euro.</ion-card-subtitle>
                 </ion-card-header>
                 <ion-card-content>
                   <form>
@@ -109,7 +111,6 @@
                         <p input>EUR</p>
                       </select>
                     </div><br>
-                    <!-- Above lists all the values for the select base currency-->
 
 
                     <select class="selectCurrency" id="Currency">
@@ -147,12 +148,25 @@
                       <option input>MYR</option>
                       <option input>GBP</option>
                     </select>
+                  </form>
+                  </ion-card-content>
+                </ion-card>
                     <!-- Above lists all the values for the exchange currency. Identified through the API as they hold the same values.-->
-                    <br><br>
-                    <input class="convert"  type="button" value="Convert" onclick="currencyConvert()">
+                    
+
+
+
+
+                    <ion-card>
+                      <ion-card-content>
+                    <input class="convert"  type="button" value="Convert" onclick="currencyConvert()"> <br><br>
 <!--                     <ion-button expand="block" class="convert"  type="button" value="Convert" onclick="currencyConvert()">Convert</ion-button> -->
                     <input class="result" type="text" placeholder="Conversion Result" id="Output" select disabled>
-                    
+                  </ion-card-content>
+                  </ion-card>
+
+
+
                     <script>
 
                       async function currencyConvert() {
@@ -176,9 +190,8 @@
                           }
                       }
                   </script>
-                  </form>
-                </ion-card-content>
-              </ion-card>
+
+
       </ion-content>
 
   </ion-app>

@@ -84,7 +84,7 @@
                 </ion-item>
                 <ion-card-content>
                     <ion-item color="primary">
-                        <ion-label>Stable</ion-label>
+                      <ion-label id="currentBal">Stable</ion-label>
                       </ion-item>
                 </ion-card-content>
               </ion-card>
@@ -94,44 +94,51 @@
                   <ion-label>Bills</ion-label>
                   <ion-title>Next 30 days</ion-title>
                 </ion-item>
-                <ion-card-content>
-                    <ion-item id="overallBal" color="danger">
-                        <ion-label  id="overallBalText">Overall - Insufficient Balance</ion-label>
+                <ion-card-content id="balContent">
+                    <ion-item  id="overallBal">
+                        <ion-label  id="overallBalText">Overall - </ion-label>
                       </ion-item>
+                      <ion-note id="topUp" color="danger">Balance requires top-up</ion-note>
 
-                      <ion-note color="danger">Balance requires top-up</ion-note>
-                </ion-card-content>
-                <ion-card-content>
-                    <ion-item color="danger">
-                        <ion-label>Rent</ion-label>
-                      </ion-item>
-                </ion-card-content>
-                <ion-card-content>
-                    <ion-item color="warning">
-                        <ion-label>Car</ion-label>
-                      </ion-item>
-                </ion-card-content>
-                <ion-card-content>
-                    <ion-item color="success">
-                        <ion-label>Gas & Electric</ion-label>
-                      </ion-item>
-                </ion-card-content>
-                <ion-card-content>
-                    <ion-item color="success">
-                        <ion-label>Phone</ion-label>
-                      </ion-item>
+                     
                 </ion-card-content>
 
+
+                <ion-card-content>
+                    <ion-item id="rentColor">
+                        <ion-label id="currentRent">Rent</ion-label>
+                      </ion-item>
+                </ion-card-content>
+                <ion-card-content>
+                    <ion-item id="carColor">
+                        <ion-label id="currentCar">Car</ion-label>
+                      </ion-item>
+                </ion-card-content>
+                <ion-card-content>
+                    <ion-item id="gasColor">
+                        <ion-label id="currentGas">Gas & Electric</ion-label>
+                      </ion-item>
+                </ion-card-content>
+                <ion-card-content>
+                    <ion-item id="phoneColor">
+                        <ion-label id="currentPhone">Phone</ion-label>
+                      </ion-item>
+                </ion-card-content>
+
+                <ion-card-content>
+                  <ion-item id="otherColor">
+                      <ion-label id="currentOther">Other</ion-label>
+                    </ion-item>
+              </ion-card-content>
               </ion-card>
 
               <ion-card>
                 <ion-item>
-                  <ion-label>Spent</ion-label>
-                  <ion-title>Past 30 days</ion-title>
+                  <ion-label>Spending</ion-label>
+                  <ion-title>30 days</ion-title>
                 </ion-item>
                 <ion-card-content>
-                    <img src="images/exVsin.png" />
-                        <ion-label>Expenses Vs Income</ion-label>
+                        <ion-label color="dark" id="spent"></ion-label>
                 </ion-card-content>
               </ion-card>
             </ion-list>
