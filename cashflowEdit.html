@@ -2,162 +2,165 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cashflow</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <script src="cashflowEdit.js" defer></script>
-    
-    <style>
-        :root {
-            --ion-safe-area-top: 20px;
-            --ion-safe-area-bottom: 22px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cashflow</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <script src="cashflowEdit.js" defer></script>
+
+  <style>
+    :root {
+      --ion-safe-area-top: 20px;
+      --ion-safe-area-bottom: 22px;
+    }
+  </style>
 </head>
+<!-- Cashflow edit page for editting number inputs to the cashflow page. -->
 
 <body>
-    <ion-app>
-        <ion-header translucent>
-            <ion-toolbar>
-                <ion-title>Your Cashflow</ion-title>
-            </ion-toolbar>
-        </ion-header>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Your Cashflow</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <!-- Navigation fab below -->
+    <ion-content fullscreen class="ion-padding">
+      <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+        <ion-fab-button>
+          <ion-icon name="chevron-down-circle-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list>
+          <ion-fab-button color="light" href="Home.html">
+            <ion-icon name="home"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button color="light" href="profileEdit.html">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button color="primary" href="Cashflow.html">
+            <ion-icon name="card-outline"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button color="light" href="converter.html">
+            <ion-icon name="logo-usd"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button color="light" href="chat.html">
+            <ion-icon name="logo-wechat"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+        </ion-fab-list>
+      </ion-fab>
 
-        <ion-content fullscreen class="ion-padding">
-            <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
-              <ion-fab-button>
-                <ion-icon name="chevron-down-circle-outline"></ion-icon>
-              </ion-fab-button>
-              <ion-fab-list>
-                <ion-fab-button color="light" href ="Home.html">
-                  <ion-icon name="home"></ion-icon>
-                </ion-fab-button>
-                <ion-fab-button color="light" href ="profileEdit.html">
-                  <ion-icon name="person-circle-outline"></ion-icon>
-                </ion-fab-button>
-                <ion-fab-button color="primary" href ="Cashflow.html">
-                  <ion-icon name="card-outline"></ion-icon>
-                </ion-fab-button>
-                <ion-fab-button color="light" href ="converter.html">
-                  <ion-icon name="logo-usd"></ion-icon>
-                </ion-fab-button>
-                <ion-fab-button color="light" href ="chat.html">
-                  <ion-icon name="logo-wechat"></ion-icon>
-                </ion-fab-button>
-            </ion-fab-list>
-              </ion-fab-list>
-            </ion-fab>
+      <!-- Back button fab below. -->
+      <ion-fab size="small" horizontal="start" vertical="top" edge slot="fixed">
+        <ion-fab-button color="translucent" href="Cashflow.html">
+          <ion-icon size="large" ios="arrow-back-circle"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <!-- simple navigation -->
+      <ion-content fullscreen>
+        <ion-list inset="true">
+          <ion-breadcrumbs>
+            <ion-breadcrumb href="Home.html">
+              <ion-icon slot="start" name="home"></ion-icon>
+              Home
+            </ion-breadcrumb>
+
+            <ion-breadcrumbs>
+              <ion-breadcrumb href="Cashflow.html">
+                <ion-icon slot="start" name="card-outline">
+                </ion-icon>
+                Your Cashflow
+              </ion-breadcrumb>
+
+              <ion-breadcrumbs>
+                <ion-breadcrumb href="cashflowEdit.html">
+                  <ion-icon slot="start" name="card-outline">
+                  </ion-icon>
+                  Edit Cashflow
+                </ion-breadcrumb>
+        </ion-list>
 
 
-        <ion-content fullscreen>
-            <ion-list inset="true">
-                <ion-breadcrumbs>
-                    <ion-breadcrumb href="#">
-                        <ion-icon slot="start" name="home"></ion-icon>
-                        Home
-                    </ion-breadcrumb>
-
-                    <ion-breadcrumbs>
-                        <ion-breadcrumb href="profile">
-                            <ion-icon slot="start" name="card-outline">
-                            </ion-icon>
-                            Your Cashflow
-                        </ion-breadcrumb>
-
-                        <ion-breadcrumbs>
-                            <ion-breadcrumb href="profile">
-                                <ion-icon slot="start" name="card-outline">
-                                </ion-icon>
-                                Edit Cashflow
-                            </ion-breadcrumb>
-
-            </ion-list>
- 
-
-            <ion-list>
-            <ion-card>
-            <ion-item>       
-                  <ion-label>Current Balance</ion-label>
-                </ion-item>
-                <ion-card-content>
-                    <ion-item color="dark" id="balColor">
-                        <ion-input id="balAmount" placeholder ="Amount" type="number"></ion-input>
-                        <ion-button id="balButton" size="small" color="light">Update</ion-button>
-                      </ion-item>
-                </ion-card-content>
-              </ion-card>
-            
-              <ion-card>
-              <ion-item> 
-                 <ion-label>Rent</ion-label>
-                </ion-item>
+        <ion-list>
+          <ion-card>
+            <ion-item>
+              <ion-label>Current Balance</ion-label>
+            </ion-item>
             <ion-card-content>
-                <ion-item color="dark" id="rentColor">
-                    <ion-input id="rentAmount" placeholder ="Amount"  type="number"></ion-input>
-                    <ion-button id="rentButton" size="small" color="light">Update</ion-button>
-                  </ion-item>
+              <ion-item color="dark" id="balColor">
+                <ion-input id="balAmount" placeholder="Amount" type="number"></ion-input>
+                <ion-button id="balButton" size="small" color="light">Update</ion-button>
+              </ion-item>
             </ion-card-content>
           </ion-card>
 
           <ion-card>
-            <ion-item> 
-               <ion-label>Car Costs</ion-label>
+            <ion-item>
+              <ion-label>Rent</ion-label>
+            </ion-item>
+            <ion-card-content>
+              <ion-item color="dark" id="rentColor">
+                <ion-input id="rentAmount" placeholder="Amount" type="number"></ion-input>
+                <ion-button id="rentButton" size="small" color="light">Update</ion-button>
               </ion-item>
-          <ion-card-content>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-item>
+              <ion-label>Car Costs</ion-label>
+            </ion-item>
+            <ion-card-content>
               <ion-item color="dark" id="carColor">
-                  <ion-input id="carAmount" placeholder ="Amount" type="number"></ion-input>
-                  <ion-button id="carButton" size="small" color="light">Update</ion-button>
-                </ion-item>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card>
-            <ion-item> 
-               <ion-label>Gas & Electric Bill</ion-label>
+                <ion-input id="carAmount" placeholder="Amount" type="number"></ion-input>
+                <ion-button id="carButton" size="small" color="light">Update</ion-button>
               </ion-item>
-          <ion-card-content>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-item>
+              <ion-label>Gas & Electric Bill</ion-label>
+            </ion-item>
+            <ion-card-content>
               <ion-item color="dark" id="gasColor">
-                  <ion-input id="gasAmount" placeholder ="Amount" type="number"></ion-input>
-                  <ion-button id="gasButton" size="small" color="light">Update</ion-button>
-                </ion-item>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card>
-            <ion-item> 
-               <ion-label>Phone Bill</ion-label>
+                <ion-input id="gasAmount" placeholder="Amount" type="number"></ion-input>
+                <ion-button id="gasButton" size="small" color="light">Update</ion-button>
               </ion-item>
-          <ion-card-content>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-item>
+              <ion-label>Phone Bill</ion-label>
+            </ion-item>
+            <ion-card-content>
               <ion-item color="dark" id="phoneColor">
-                  <ion-input id="phoneAmount" placeholder ="Amount"   type="number"></ion-input>
-                  <ion-button id="phoneButton" size="small" color="light">Update</ion-button>
-                </ion-item>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card>
-            <ion-item> 
-               <ion-label>Other</ion-label>
+                <ion-input id="phoneAmount" placeholder="Amount" type="number"></ion-input>
+                <ion-button id="phoneButton" size="small" color="light">Update</ion-button>
               </ion-item>
-          <ion-card-content>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-item>
+              <ion-label>Other</ion-label>
+            </ion-item>
+            <ion-card-content>
               <ion-item color="dark" id="otherColor">
-                  <ion-input id="otherAmount" placeholder ="Amount" type="number"></ion-input>
-                  <ion-button id="otherButton" size="small" color="light">Update</ion-button>
-                </ion-item>
-          </ion-card-content>
-        </ion-card>
+                <ion-input id="otherAmount" placeholder="Amount" type="number"></ion-input>
+                <ion-button id="otherButton" size="small" color="light">Update</ion-button>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
 
-      </ion-list>
-
-
+        </ion-list>
 
 
-
-        </ion-content>
-    </ion-app>
+      </ion-content>
+  </ion-app>
 </body>
 
 </html>

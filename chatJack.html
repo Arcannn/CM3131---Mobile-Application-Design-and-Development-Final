@@ -18,16 +18,16 @@
             border-radius: 25px;
 
         }
+
         .messageJ {
-    color: rgba(20, 131, 221, 0.747);
-    padding: 10px 5px;
-    display: block;
-    float: left;
+            color: rgba(20, 131, 221, 0.747);
+            padding: 10px 5px;
+            display: block;
+            float: left;
         }
-
-
     </style>
 </head>
+<!-- Page is for the Jack conversation. -->
 
 <body>
     <ion-app>
@@ -37,31 +37,39 @@
             </ion-toolbar>
         </ion-header>
 
+        <!-- Fab navigation -->
         <ion-content fullscreen class="ion-padding">
             <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
                 <ion-fab-button>
                     <ion-icon name="chevron-down-circle-outline"></ion-icon>
-                  </ion-fab-button>
-                  <ion-fab-list>
-                    <ion-fab-button color="light" href ="Home.html">
-                      <ion-icon name="home"></ion-icon>
+                </ion-fab-button>
+                <ion-fab-list>
+                    <ion-fab-button color="light" href="Home.html">
+                        <ion-icon name="home"></ion-icon>
                     </ion-fab-button>
-                    <ion-fab-button color="light" href ="profileEdit.html">
-                      <ion-icon name="person-circle-outline"></ion-icon>
+                    <ion-fab-button color="light" href="profileEdit.html">
+                        <ion-icon name="person-circle-outline"></ion-icon>
                     </ion-fab-button>
-                    <ion-fab-button color="light" href ="Cashflow.html">
-                      <ion-icon name="card-outline"></ion-icon>
+                    <ion-fab-button color="light" href="Cashflow.html">
+                        <ion-icon name="card-outline"></ion-icon>
                     </ion-fab-button>
-                    <ion-fab-button color="light" href ="converter.html">
-                      <ion-icon name="logo-usd"></ion-icon>
+                    <ion-fab-button color="light" href="converter.html">
+                        <ion-icon name="logo-usd"></ion-icon>
                     </ion-fab-button>
-                    <ion-fab-button color="primary" href ="chat.html">
-                      <ion-icon name="logo-wechat"></ion-icon>
+                    <ion-fab-button color="primary" href="chat.html">
+                        <ion-icon name="logo-wechat"></ion-icon>
                     </ion-fab-button>
                 </ion-fab-list>
             </ion-fab>
 
+            <!-- Back button -->
+            <ion-fab size="small" horizontal="start" vertical="top" edge slot="fixed">
+                <ion-fab-button color="translucent" href="chat.html">
+                    <ion-icon size="large" ios="arrow-back-circle"></ion-icon>
+                </ion-fab-button>
+            </ion-fab>
 
+            <!-- simple navigation -->
             <ion-content fullscreen>
                 <ion-list inset="true">
                     <ion-breadcrumbs>
@@ -83,20 +91,30 @@
                                     </ion-icon>
                                     Jack
                                 </ion-breadcrumb>
-
                 </ion-list>
 
                 <ion-list>
-                    <ion-list-header> Jack </ion-list-header>
+                    <ion-list>
+                        <ion-item>
+                            <ion-thumbnail slot="start">
+                                <ion-img src="images/person.jpg"></ion-img>
+                            </ion-thumbnail>
+                            <ion-label>Your financial advisor</ion-label>
+                        </ion-item>
+                    </ion-list>
 
+                    <ion-list-header> Jack
+                        <ion-avatar slot="start"><img src="images/person.jpg" /></ion-avatar>
+                    </ion-list-header>
 
-                     <ion-item>
-                        <ion-label position="floating">Send a message to Jack</ion-label>
+                    <!-- To allow sending messages. -->
+                    <ion-item>
+                        <ion-label position="floating" color="medium">Send a message to Jack</ion-label>
                         <ul id="messages" element class="messageJ"></ul>
                         <ion-input id="textbox" type="text"></ion-input>
                         <ion-button size="small" id="button">Send</ion-button>
                         <script src="chat.js"></script>
-                      </ion-item>
+                    </ion-item>
                 </ion-list>
 
 

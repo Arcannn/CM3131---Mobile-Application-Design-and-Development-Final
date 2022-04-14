@@ -1,3 +1,4 @@
+/* Variables for amount, buttons, colour updates once buttons have been clicked. */
 var balButton = document.getElementById("balButton");
 var rentButton = document.getElementById("rentButton");
 var gasButton = document.getElementById("gasButton");
@@ -19,30 +20,32 @@ var carColor = document.getElementById("carColor");
 var phoneColor = document.getElementById("phoneColor");
 var otherColor = document.getElementById("otherColor");
 
-/* Change the colour of the box once update has been clicked. */
-balButton.addEventListener("click", function(){
+/* Change the colour of the box once update has been clicked.
+
+Local storage as the user updates their balance, and bills to be transferred to the cashflow main page.*/
+balButton.addEventListener("click", function () {
     balColor.color = "success";
 
-    localStorage.setItem('amountBal',balAmount.value);
+    localStorage.setItem('amountBal', balAmount.value);
 })
-rentButton.addEventListener("click", function(){
+rentButton.addEventListener("click", function () {
     rentColor.color = "success";
-    localStorage.setItem('amountRent',rentAmount.value);
+    localStorage.setItem('amountRent', rentAmount.value);
 })
-gasButton.addEventListener("click", function(){
+gasButton.addEventListener("click", function () {
     gasColor.color = "success";
-    localStorage.setItem('amountGas',gasAmount.value);
+    localStorage.setItem('amountGas', gasAmount.value);
 })
-carButton.addEventListener("click", function(){
+carButton.addEventListener("click", function () {
     carColor.color = "success";
-    localStorage.setItem('amountCar',carAmount.value);
+    localStorage.setItem('amountCar', carAmount.value);
 })
-phoneButton.addEventListener("click", function(){
+phoneButton.addEventListener("click", function () {
     phoneColor.color = "success";
-    localStorage.setItem('amountPhone',phoneAmount.value);
+    localStorage.setItem('amountPhone', phoneAmount.value);
 })
-otherButton.addEventListener("click", function(){
+otherButton.addEventListener("click", function () {
     otherColor.color = "success";
-    localStorage.setItem('amountOther',otherAmount.value);
+    localStorage.setItem('amountOther', otherAmount.value);
 })
 

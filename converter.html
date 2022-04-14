@@ -50,41 +50,41 @@
       </ion-chip>
     </ion-header>
 
-    <ion-content fullscreen class="ion-padding">
-      <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+    <ion-content>
+      <ion-fab horizontal="end" vertical="top" edge slot="fixed">
         <ion-fab-button>
           <ion-icon name="chevron-down-circle-outline"></ion-icon>
         </ion-fab-button>
         <ion-fab-list>
-          <ion-fab-button color="light" href ="Home.html">
+          <ion-fab-button color="light" href="Home.html">
             <ion-icon name="home"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light" href ="profileEdit.html">
+          <ion-fab-button color="light" href="profileEdit.html">
             <ion-icon name="person-circle-outline"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light" href ="Cashflow.html">
+          <ion-fab-button color="light" href="Cashflow.html">
             <ion-icon name="card-outline"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="primary" href ="converter.html">
+          <ion-fab-button color="primary" href="converter.html">
             <ion-icon name="logo-usd"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light" href ="chat.html">
+          <ion-fab-button color="light" href="chat.html">
             <ion-icon name="logo-wechat"></ion-icon>
           </ion-fab-button>
-      </ion-fab-list>
+        </ion-fab-list>
       </ion-fab>
 
       <ion-content fullscreen class="ion-padding">
         <!-- navigation -->
         <ion-list inset="true">
           <ion-breadcrumbs>
-            <ion-breadcrumb href="#">
+            <ion-breadcrumb href="Home.html">
               <ion-icon slot="start" name="home"></ion-icon>
               Home
             </ion-breadcrumb>
 
             <ion-breadcrumbs>
-              <ion-breadcrumb href="profile">
+              <ion-breadcrumb href="converter.html">
                 <ion-icon slot="start" name="logo-usd">
                 </ion-icon>
                 Currency Converter
@@ -92,104 +92,104 @@
         </ion-list>
 
 
-              <!-- Currency converter -->
-              <ion-card>
-                <ion-card-header>
+        <!-- Currency converter -->
+        <ion-card>
+          <ion-card-header>
 
-                  <ion-card-title>Currency Converter</ion-card-title> <br><br>
-                  <ion-card-subtitle>please select the currency you wish to use.</ion-card-subtitle> 
-                  <br>
-                  <ion-card-subtitle>Base currency is Euro.</ion-card-subtitle>
-                </ion-card-header>
-                <ion-card-content>
-                  <form>
-                    <input class="Enter" type="number" id="amount" placeholder="Enter Amount Here"><br><br>
-                    <input class="reset" type="reset" value="Reset Exchange"><br><br>
-                    <div class="custom-select">
-                      <select class="select" id="base" required>
-                        <option value="select" selected disabled>EUR</option>
-                        <p input>EUR</p>
-                      </select>
-                    </div><br>
+            <ion-card-title>Currency Converter</ion-card-title> <br><br>
+            <ion-card-subtitle>please select the currency you wish to use.</ion-card-subtitle>
+            <br>
+            <ion-card-subtitle>Base currency is Euro.</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+
+            <!-- Enter the amount: -->
+            <input style="text-align:center;" type="number" id="amount" placeholder="Enter Amount Here">
+
+            <br><br>
+            <form>
+              <div class="custom-select">
+                <class="select" id="base" required></select>
+              </div>
+
+              <ion-select placeholder="Select Conversion Currency" class="selectCurrency" id="Currency">
+                <ion-select-option value="select" selected disabled>Select Conversion Currency</ion-select-option>
+                <ion-select-option input>EUR</ion-select-option>
+                <ion-select-option input>USD</ion-select-option>
+                <ion-select-option input>HKD</ion-select-option>
+                <ion-select-option input>CAD</ion-select-option>
+                <ion-select-option input>ISK</ion-select-option>
+                <ion-select-option input>PHP</ion-select-option>
+                <ion-select-option input>DKK</ion-select-option>
+                <ion-select-option input>HUF</ion-select-option>
+                <ion-select-option input>CZK</ion-select-option>
+                <ion-select-option input>AUD</ion-select-option>
+                <ion-select-option input>RON</ion-select-option>
+                <ion-select-option input>SEK</ion-select-option>
+                <ion-select-option input>IDR</ion-select-option>
+                <ion-select-option input>BRL</ion-select-option>
+                <ion-select-option input>RUB</ion-select-option>
+                <ion-select-option input>HRK</ion-select-option>
+                <ion-select-option input>JPY</ion-select-option>
+                <ion-select-option input>THB</ion-select-option>
+                <ion-select-option input>CHF</ion-select-option>
+                <ion-select-option input>SGD</ion-select-option>
+                <ion-select-option input>PLN</ion-select-option>
+                <ion-select-option input>BGN</ion-select-option>
+                <ion-select-option input>TRY</ion-select-option>
+                <ion-select-option input>CNY</ion-select-option>
+                <ion-select-option input>NOK</ion-select-option>
+                <ion-select-option input>NZD</ion-select-option>
+                <ion-select-option input>ZAR</ion-select-option>
+                <ion-select-option input>MXN</ion-select-option>
+                <ion-select-option input>ILS</ion-select-option>
+                <ion-select-option input>KRW</ion-select-option>
+                <ion-select-option input>MYR</ion-select-option>
+                <ion-select-option input>GBP</ion-select-option>
+              </ion-select>
+            </form>
+            <br>
+            <!-- Above lists all the values for the exchange currency. Identified through the API as they hold the same values.-->
+
+            <!-- Below is the ion-button that allows the amount to be converted using an onclick, script for the button found below. -->
+            <ion-button expand="block" class="convert" type="button" value="Convert" onclick="currencyConvert()">Convert
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- The second card on the page, showing the result and a reset button -->
+        <ion-card>
+          <ion-card-content>
+            <input style="text-align:center;" id="Output" select disabled><br><br>
+            <ion-button expand="block" type="reset" value="Reset Exchange">Reset Exchange</ion-button>
+          </ion-card-content>
+        </ion-card>
 
 
-                    <select class="selectCurrency" id="Currency">
-                      <option value="select" selected disabled>Select Conversion Currency</option>
-                      <option input>EUR</option>
-                      <option input>USD</option>
-                      <option input>HKD</option>
-                      <option input>CAD</option>
-                      <option input>ISK</option>
-                      <option input>PHP</option>
-                      <option input>DKK</option>
-                      <option input>HUF</option>
-                      <option input>CZK</option>
-                      <option input>AUD</option>
-                      <option input>RON</option>
-                      <option input>SEK</option>
-                      <option input>IDR</option>
-                      <option input>BRL</option>
-                      <option input>RUB</option>
-                      <option input>HRK</option>
-                      <option input>JPY</option>
-                      <option input>THB</option>
-                      <option input>CHF</option>
-                      <option input>SGD</option>
-                      <option input>PLN</option>
-                      <option input>BGN</option>
-                      <option input>TRY</option>
-                      <option input>CNY</option>
-                      <option input>NOK</option>
-                      <option input>NZD</option>
-                      <option input>ZAR</option>
-                      <option input>MXN</option>
-                      <option input>ILS</option>
-                      <option input>KRW</option>
-                      <option input>MYR</option>
-                      <option input>GBP</option>
-                    </select>
-                  </form>
-                  </ion-card-content>
-                </ion-card>
-                    <!-- Above lists all the values for the exchange currency. Identified through the API as they hold the same values.-->
-                    
+        <!-- Simple script for the API input and output. Base currency x currency selected = output.  -->
+        <script>
 
+          async function currencyConvert() {
+            var valNum = document.getElementById("amount").value;
+            if (valNum <= 0) {
+              window.alert("Please Enter a value greater than 0");
+            }
 
+            else {
+              var base = document.getElementById("base").value;
+              var currencyValue = document.getElementById("Currency").value;
+              if (currencyValue == "select") {
+                window.alert("Please pick a conversion currency!");
+              }
 
+              else {
+                var rates = await getDataByBase(base);
+                document.getElementById("Output").value = (valNum * rates[currencyValue]).toFixed(2);
+              }
 
-                    <ion-card>
-                      <ion-card-content>
-                    <input class="convert"  type="button" value="Convert" onclick="currencyConvert()"> <br><br>
-<!--                     <ion-button expand="block" class="convert"  type="button" value="Convert" onclick="currencyConvert()">Convert</ion-button> -->
-                    <input class="result" type="text" placeholder="Conversion Result" id="Output" select disabled>
-                  </ion-card-content>
-                  </ion-card>
-
-
-
-                    <script>
-
-                      async function currencyConvert() {
-                          var valNum = document.getElementById("amount").value;
-                          if (valNum <= 0) {
-                              window.alert("Please Enter a value greater than 0");
-                          }
-              
-                          else {
-                              var base = document.getElementById("base").value;
-                              var currencyValue = document.getElementById("Currency").value;
-                              if (currencyValue == "select") {
-                                  window.alert("Please pick a conversion currency!");
-                              }
-              
-                              else {
-                                  var rates = await getDataByBase(base);
-                                  document.getElementById("Output").value = (valNum * rates[currencyValue]).toFixed(2);
-                              }
-              
-                          }
-                      }
-                  </script>
+            }
+          }
+        </script>
 
 
       </ion-content>

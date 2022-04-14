@@ -1,4 +1,4 @@
-CM3131 Mobile Application Design and Development Submission 1. 
+CM3131 Mobile Application Design and Development Submission. 
 Tyler Sears - 1812020
 
 

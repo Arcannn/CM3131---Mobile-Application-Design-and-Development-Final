@@ -19,6 +19,7 @@
     }
   </style>
 </head>
+<!-- Simple chat page, for the user to gain advise or partake in discussion. -->
 
 <body>
   <ion-app>
@@ -27,32 +28,32 @@
         <ion-title>Talk to experts!</ion-title>
       </ion-toolbar>
     </ion-header>
-
+    <!-- navigation fab -->
     <ion-content fullscreen class="ion-padding">
       <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
         <ion-fab-button>
           <ion-icon name="chevron-down-circle-outline"></ion-icon>
         </ion-fab-button>
         <ion-fab-list>
-          <ion-fab-button color="light" href ="Home.html">
+          <ion-fab-button color="light" href="Home.html">
             <ion-icon name="home"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light" href ="profileEdit.html">
+          <ion-fab-button color="light" href="profileEdit.html">
             <ion-icon name="person-circle-outline"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light" href ="Cashflow.html">
+          <ion-fab-button color="light" href="Cashflow.html">
             <ion-icon name="card-outline"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="light" href ="converter.html">
+          <ion-fab-button color="light" href="converter.html">
             <ion-icon name="logo-usd"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button color="primary" href ="chat.html">
+          <ion-fab-button color="primary" href="chat.html">
             <ion-icon name="logo-wechat"></ion-icon>
           </ion-fab-button>
-      </ion-fab-list>
+        </ion-fab-list>
       </ion-fab>
 
-
+      <!-- simple navigation -->
       <ion-content fullscreen>
         <ion-list inset="true">
           <ion-breadcrumbs>
@@ -69,11 +70,10 @@
               </ion-breadcrumb>
         </ion-list>
 
-
+        <!-- The user can click on the blue "Jack" conversation to type within it. -->
         <ion-list>
           <ion-list-header> Recent Conversations </ion-list-header>
-
-          <ion-item href ="chatJack.html" color="primary" div="round">
+          <ion-item href="chatJack.html" color="primary" div="round">
             <ion-avatar slot="start">
               <img src="images/person.jpg" />
             </ion-avatar>
@@ -84,6 +84,7 @@
             </ion-label>
           </ion-item>
 
+          <!-- Random text articles for examples below. -->
           <ion-item color="light">
             <ion-avatar slot="start">
               <img src="images/ukflag.jpg" />
@@ -170,11 +171,6 @@
           </ion-item>
 
         </ion-list>
-
-
-
-
-
 
       </ion-content>
   </ion-app>
