@@ -104,10 +104,15 @@
           <ion-card-content>
 
             <!-- Enter the amount: -->
-            <input style="text-align:center;" type="number" id="amount" placeholder="Enter Amount Here">
 
-            <br><br>
-            <form>
+
+
+            <form style="margin: auto">
+              <ion-card color="light">
+                <ion-card-content>
+                  <input style="text-align:center;" type="number" id="amount" placeholder="Enter Amount Here">
+                </ion-card-content>
+              </ion-card>
               <div class="custom-select">
                 <class="select" id="base" required></select>
               </div>
@@ -147,24 +152,26 @@
                 <ion-select-option input>MYR</ion-select-option>
                 <ion-select-option input>GBP</ion-select-option>
               </ion-select>
-            </form>
-            <br>
-            <!-- Above lists all the values for the exchange currency. Identified through the API as they hold the same values.-->
 
-            <!-- Below is the ion-button that allows the amount to be converted using an onclick, script for the button found below. -->
-            <ion-button expand="block" class="convert" type="button" value="Convert" onclick="currencyConvert()">Convert
-            </ion-button>
+
+              <br>
+              <!-- Above lists all the values for the exchange currency. Identified through the API as they hold the same values.-->
+
+              <!-- Below is the ion-button that allows the amount to be converted using an onclick, script for the button found below. -->
+              <ion-button expand="block" class="convert" type="button" value="Convert" onclick="currencyConvert()">
+                Convert
+              </ion-button>
           </ion-card-content>
         </ion-card>
 
         <!-- The second card on the page, showing the result and a reset button -->
-        <ion-card>
+        <ion-card color="light">
           <ion-card-content>
             <input style="text-align:center;" id="Output" select disabled><br><br>
             <ion-button expand="block" type="reset" value="Reset Exchange">Reset Exchange</ion-button>
           </ion-card-content>
         </ion-card>
-
+        </form>
 
         <!-- Simple script for the API input and output. Base currency x currency selected = output.  -->
         <script>
